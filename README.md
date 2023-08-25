@@ -35,6 +35,73 @@ To get started with this project, follow these steps:
 ## Usage
 
 This project serves as a foundation for creating interactive Unity experiences that incorporate Arduino hardware. You can extend and customize it to suit your specific gaming or simulation needs.
+#Code for MyListener.cs
+```
+/**
+ * Ardity (Serial Communication for Arduino + Unity)
+ * Author: Daniel Wilches <dwilches@gmail.com>
+ * Modifications for InterfaceLab 2020 to move a cube
+ *  
+ * This work is released under the Creative Commons Attributions license.
+ * https://creativecommons.org/licenses/by/2.0/
+ */
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+public class MyListener : MonoBehaviour
+{
+    [SerializeField]
+    public GameObject objectToDestroy;
+    public float targetLocation;
+    void Start() // Start is called before the first frame update
+    {
+
+    }
+    void Update() // Update is called once per frame
+    {
+        Debug.Log("Target Location: " + targetLocation);
+        Debug.Log("Square Location: " + objectToDestroy.transform.position.y);
+    }
+    void OnMessageArrived(string msg)
+    {
+
+        Debug.Log("Buton Pressed: " + msg);
+        if (msg == "1")
+        {
+            float lowerLimit = 50; // Replace with your lower limit
+            float upperLimit = 60; // Replace with your upper limit
+
+            if (objectToDestroy.transform.position.y >= lowerLimit && objectToDestroy.transform.position.y <= upperLimit)
+            {
+                Debug.Log("Objet about to kill at" + objectToDestroy.transform.position.y);
+                Destroy(objectToDestroy);
+                Debug.Log("Objetkilled at" + objectToDestroy.transform.position.y);
+            }
+            else
+            {
+                // Code to execute when the condition is not met
+                Debug.Log("Object not destroyed because it's not within the specified range.");
+            }
+            else if (objectToDestroy.transform.position.y < -10)
+            {
+                // Code to automatically destroy the object when it falls below -10
+                Debug.Log("Object automatically destroyed because it fell below -10 at " + objectToDestroy.transform.position.y);
+                Destroy(objectToDestroy);
+            }
+        }
+
+
+
+    }
+    // Invoked when a connect/disconnect event occurs. The parameter 'success'
+    // will be 'true' upon connection, and 'false' upon disconnection or
+    // failure to connect.
+    void OnConnectionEvent(bool success)
+    {
+        Debug.Log(success ? "Device connected" : "Device disconnected");
+    }
+}
+```
 
 ## License
 
