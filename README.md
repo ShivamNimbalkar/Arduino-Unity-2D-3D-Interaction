@@ -12,7 +12,7 @@ The successful connection between Arduino and Unity is achieved through the [Ard
 
 - **2D and 3D Environments:** This project offers compatibility with both 2D and 3D Unity environments, providing flexibility for different types of games and simulations.
 
-- **Gameplay Element:** The project includes a 2D scene with a falling game object (square) that responds to keyboard inputs from the Arduino. When the designated key is pressed, the game logic executes a series of if statements to determine if the object should be destroyed, awarding points to the player. If the player fails to act in time, the object is automatically removed from the game at a specific y-axis location.
+- **Gameplay Element:** The project includes a 2D scene with a falling game object (square) that responds to keyboard inputs from the Arduino. When the designated key is pressed, the game logic executes a series of if statements to determine if the object should be destroyed[The Scrip](#Code-For-MyListener.cs), awarding points to the player. If the player fails to act in time, the object is automatically removed from the game at a specific y-axis location.
 
 ## Getting Started
 
@@ -113,7 +113,7 @@ We want to express our gratitude to the creators of the Ardity asset for facilit
 
 ## Support
 
-If you encounter any issues or have questions about this project, please feel free to [reach out to us](https://github.com/yourusername/your-repo-name/issues) through the project's GitHub repository.
+If you encounter any issues or have questions about this project, please feel free to [reach out to us](https://github.com/ShivamNimbalkar/Arduino-Unity-2D-3D-Interaction/issues) through the project's GitHub repository.
 
 ---
 
